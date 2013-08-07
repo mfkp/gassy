@@ -119,7 +119,7 @@ func watchAllDirs(watcher *fsnotify.Watcher, root string) (err error) {
   walkFn := func(path string, info os.FileInfo, err error) error {
     if info.IsDir() {
       watcher.Watch(path)
-      log.Println("Added Watch: ", path)
+      log.Println("Watching: ", path)
     }
     return nil
   }
