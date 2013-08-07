@@ -18,16 +18,13 @@ var (
 )
 
 func main() {
-  // watchFiles := []string{}
   compileFiles := []string{}
   watchings := map[string]string{}
   watchDirs := []string{}
 
-
   flag.Parse()
 
   // parse the yaml yo
-
   yml, err := yaml.ReadFile(*file)
   if err != nil {
     log.Fatal("Error reading config file")
@@ -60,7 +57,7 @@ func main() {
   for _, param := range params {
     if param == "build" || param == "b" { // "gassy build"
       fmt.Println("Built. Come again soon.")
-    } else if param == "watch" || param == "w" { // default is watch
+    } else if param == "watch" || param == "w" { // "gassy watch"
       watcher, err := fsnotify.NewWatcher()
       if err != nil {
           log.Fatal(err)
@@ -112,9 +109,6 @@ func main() {
   }
 }
 
-
-
-
 func watchAllDirs(watcher *fsnotify.Watcher, root string) (err error) {
   walkFn := func(path string, info os.FileInfo, err error) error {
     if info.IsDir() {
@@ -126,10 +120,6 @@ func watchAllDirs(watcher *fsnotify.Watcher, root string) (err error) {
 
   return filepath.Walk(root, walkFn)
 }
-
-
-
-
 
 func getFiles(s string) ([]string, []string) {
   watchFiles := []string{}
@@ -166,9 +156,6 @@ func getFiles(s string) ([]string, []string) {
   }
   return watchFiles, compileFiles
 }
-
-
-
 
 func compile(s string, d string) {
   // compile the sass yo
