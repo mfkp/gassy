@@ -1,5 +1,5 @@
 config:
-  - source:  source1
+  - source:  source1//
     dest: compiled
   - source:  source2
     dest: compiled
