@@ -3,7 +3,7 @@
 
 Gassy is a command line tool used to watch directories containing Sass files and automatically compile them to CSS whenever a file change is detected.
 
-### BUILDING
+### INSTALL
 
 First install Go (http://golang.org/doc/install) if you don't have it already.
 
