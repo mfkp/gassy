@@ -9,13 +9,7 @@ First install Go (http://golang.org/doc/install) if you don't have it already.
 
 Next, install libsass (https://github.com/hcatlin/libsass)
 
-After that, `go get` the following three libraries:
-
-* github.com/moovweb/gosass
-* github.com/kylelemons/go-gypsy/yaml
-* github.com/howeyc/fsnotify
-
-Finally, run a `go install gassy.go` and you're all set
+After that, `go get github.com/mfkp/gassy` and you're all set
 
 
 ### CONFIG
