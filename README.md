@@ -26,7 +26,7 @@ config:
     dest: test/compiled
 ```
 
-You can have as many watched directories as you like *(the sky is the limit)*
+You can have as many watched directories as you like *(the sky is the limit)*.
 
 ### RUNNING GASSY
 After compiling, running gassy is as simple as
