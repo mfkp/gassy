@@ -40,3 +40,4 @@ To just build your stylesheets but not watch, run:
 If you use the default config.yml (and it's in the same directory as the executable), you can also ignore the -f param and simply run:
 
     gassy watch
+
