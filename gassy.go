@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"github.com/howeyc/fsnotify"
 	"github.com/kylelemons/go-gypsy/yaml"
-	sass "github.com/moovweb/gosass"
+	"github.com/moovweb/gosass"
 	"io/ioutil"
 	"log"
 	"os"
@@ -159,9 +159,9 @@ func getFiles(s string) ([]string, []string) {
 
 func compile(s string, d string) {
 	// compile the sass yo
-	ctx := sass.FileContext{
-		Options: sass.Options{
-			OutputStyle:  sass.NESTED_STYLE,
+	ctx := gosass.FileContext{
+		Options: gosass.Options{
+			OutputStyle:  gosass.NESTED_STYLE,
 			IncludePaths: make([]string, 0),
 		},
 		InputPath:    s,
@@ -171,9 +171,9 @@ func compile(s string, d string) {
 	}
 
 	// minified version
-	ctxMin := sass.FileContext{
-		Options: sass.Options{
-			OutputStyle:  sass.COMPRESSED_STYLE,
+	ctxMin := gosass.FileContext{
+		Options: gosass.Options{
+			OutputStyle:  gosass.COMPRESSED_STYLE,
 			IncludePaths: make([]string, 0),
 		},
 		InputPath:    s,
@@ -182,8 +182,8 @@ func compile(s string, d string) {
 		ErrorMessage: "",
 	}
 
-	sass.CompileFile(&ctx)
-	sass.CompileFile(&ctxMin)
+	gosass.CompileFile(&ctx)
+	gosass.CompileFile(&ctxMin)
 
 	if ctx.ErrorStatus != 0 {
 		if ctx.ErrorMessage != "" {
